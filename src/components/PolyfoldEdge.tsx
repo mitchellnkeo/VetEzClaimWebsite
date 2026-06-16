@@ -15,6 +15,8 @@ type PolyfoldEdgeProps = {
   edge: "top" | "bottom";
   containerRef: RefObject<HTMLElement | null>;
   fill?: string;
+  /** Top chevron peaks while scrolling in, then hides once section is in view. */
+  collapseWhenInView?: boolean;
 };
 
 function PolyfoldShape({
@@ -62,29 +64,45 @@ export default function PolyfoldEdge({
   edge,
   containerRef,
   fill = "#ffffff",
+  collapseWhenInView = false,
 }: PolyfoldEdgeProps) {
   const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset:
-      edge === "top"
-        ? ["start end", "start 0.3"]
-        : ["end 0.7", "end start"],
+      collapseWhenInView && edge === "top"
+        ? ["start end", "start 0.18"]
+        : edge === "top"
+          ? ["start end", "start 0.3"]
+          : ["end 0.7", "end start"],
   });
 
-  const height = useTransform(scrollYProgress, [0, 1], [0, POLYFOLD_HEIGHT]);
-  const opacity = useTransform(scrollYProgress, [0, 0.25, 1], [0, 1, 1]);
+  const enterHeight = useTransform(scrollYProgress, [0, 1], [0, POLYFOLD_HEIGHT]);
+  const enterOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.25, 1],
+    [0, 1, 1]
+  );
+
+  const collapseHeight = useTransform(
+    scrollYProgress,
+    [0, 0.38, 1],
+    [0, POLYFOLD_HEIGHT, 0]
+  );
+  const collapseOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.22, 0.55, 1],
+    [0, 1, 1, 0]
+  );
+
+  const height =
+    collapseWhenInView && edge === "top" ? collapseHeight : enterHeight;
+  const opacity =
+    collapseWhenInView && edge === "top" ? collapseOpacity : enterOpacity;
 
   if (prefersReducedMotion) {
-    return (
-      <PolyfoldShape
-        edge={edge}
-        fill={fill}
-        height={POLYFOLD_HEIGHT}
-        opacity={1}
-      />
-    );
+    return null;
   }
 
   return (

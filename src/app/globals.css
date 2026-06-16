@@ -68,7 +68,47 @@ body {
 }
 
 .demo-feature-row {
-  @apply flex min-h-[8.5rem] flex-col justify-center py-3 sm:min-h-[9.5rem] lg:min-h-[10.5rem] lg:py-4;
+  @apply flex flex-col justify-center;
+}
+
+/* 3-row grid: 01/02/03 align with 04/05/06 and center phone */
+.demo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  column-gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1280px) {
+  .demo-grid {
+    column-gap: 3.5rem;
+  }
+}
+
+.demo-grid-cell {
+  display: flex;
+  align-items: center;
+  min-height: 7.5rem;
+}
+
+.demo-grid-cell-left {
+  grid-column: 1;
+  justify-content: flex-start;
+}
+
+.demo-grid-cell-right {
+  grid-column: 3;
+  justify-content: flex-start;
+}
+
+.demo-grid-phone {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .step-icon-circle {
