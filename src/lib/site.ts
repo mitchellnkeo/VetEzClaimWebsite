@@ -30,7 +30,6 @@ export const NAV_LINKS = [
   { href: "#steps", label: "Steps" },
   { href: "#demo", label: "Demo" },
   { href: "#contact", label: "Contact" },
-  { href: "#download", label: "Download" },
 ] as const;
 
 export const HOW_IT_WORKS = [
@@ -38,7 +37,7 @@ export const HOW_IT_WORKS = [
     step: "1",
     title: "Download App & Register",
     description:
-      "Available on the Apple App Store and free to download on iOS devices.",
+      "Currently available in the Apple Store and free to download on any iOS device",
   },
   {
     step: "2",
@@ -50,46 +49,43 @@ export const HOW_IT_WORKS = [
     step: "3",
     title: "Submit Forms through the App",
     description:
-      "Upload completed forms directly to the VA from your phone.",
+      "Direct upload capabilities allow you to submit completed forms directly to the VA",
   },
 ] as const;
 
-export const FEATURES = [
+export const FEATURES_LEFT = [
   {
     number: "01",
     title: "Complete all necessary steps in one place",
-    cta: "Open Web App",
-    href: WEB_APP_URL,
+    href: APP_STORE_URL,
   },
   {
     number: "02",
     title: "Fill out forms at your own pace",
-    cta: "Download Now",
     href: APP_STORE_URL,
   },
   {
     number: "03",
     title: "Every form is broken down into its fields",
-    cta: "Download Now",
     href: APP_STORE_URL,
   },
+] as const;
+
+export const FEATURES_RIGHT = [
   {
     number: "04",
     title: "Directly upload completed forms to VA",
-    cta: "Download Now",
     href: APP_STORE_URL,
   },
   {
     number: "05",
     title: "View completed and submitted VA forms",
-    cta: "Download Now",
     href: APP_STORE_URL,
   },
   {
     number: "06",
-    title: "All features are free after you create an account and complete your profile",
-    cta: "Support Our Mission",
-    href: ZEFFY_DONATION_FORM_URL,
-    external: true,
+    title:
+      "All features are free after you create an account and complete your profile",
+    href: WEB_APP_URL,
   },
 ] as const;

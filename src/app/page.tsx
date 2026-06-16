@@ -3,7 +3,6 @@ import DownloadSection from "@/components/DownloadSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HeroSection from "@/components/HeroSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
 export default function HomePage() {
@@ -17,7 +16,6 @@ export default function HomePage() {
         <DownloadSection />
         <ContactSection />
       </main>
-      <SiteFooter />
     </>
   );
 }

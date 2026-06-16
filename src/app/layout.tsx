@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Playfair_Display, Poppins } from "next/font/google";
 import Script from "next/script";
 import { ZEFFY_EMBED_SCRIPT_URL } from "@/lib/site";
 import "./globals.css";
 
-const nunito = Nunito({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunito.variable}>
+    <html lang="en" className={`${poppins.variable} ${playfair.variable}`}>
       <body className="font-sans">
         <Script src={ZEFFY_EMBED_SCRIPT_URL} strategy="afterInteractive" />
         {children}

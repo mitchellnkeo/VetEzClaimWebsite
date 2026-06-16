@@ -1,35 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS, PRODUCT_NAME } from "@/lib/site";
+import { APP_STORE_URL, NAV_LINKS, PRODUCT_NAME } from "@/lib/site";
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-brand/10 bg-white/95 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 bg-brand">
       <div className="section-container flex items-center justify-between gap-4 py-4">
-        <Link href="#home" className="flex items-center gap-3">
+        <Link href="#home" className="flex items-center">
           <Image
-            src="/assets/logo.png"
+            src="/assets/logo-white.png"
             alt={PRODUCT_NAME}
-            width={160}
+            width={180}
             height={48}
             className="h-10 w-auto"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold text-slate-700 transition hover:text-brand"
+              className="text-sm font-medium text-white/90 transition hover:text-white"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <a href="#download" className="btn-primary shrink-0 text-xs sm:text-sm">
+        <a
+          href={APP_STORE_URL}
+          className="btn-download shrink-0 px-5 py-2 text-xs sm:text-sm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Download
         </a>
       </div>

@@ -4,6 +4,9 @@
 
 :root {
   color-scheme: light;
+  --brand-navy: #00477e;
+  --brand-accent: #3a79f9;
+  --brand-icon-bg: #ebf1fe;
 }
 
 html {
@@ -11,7 +14,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply bg-white text-slate-900 antialiased;
 }
 
 .section-container {
@@ -19,17 +22,71 @@ body {
 }
 
 .section-title {
-  @apply text-3xl font-extrabold tracking-tight text-brand sm:text-4xl;
+  @apply text-3xl font-medium text-brand sm:text-4xl;
 }
 
-.btn-primary {
-  @apply inline-flex items-center justify-center rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+.btn-download {
+  @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
 }
 
-.btn-secondary {
-  @apply inline-flex items-center justify-center rounded-lg border border-brand bg-white px-5 py-3 text-sm font-semibold text-brand transition hover:bg-brand/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+.btn-download-lg {
+  @apply btn-download px-8 py-3.5 text-base;
 }
 
-.btn-accent {
-  @apply inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+.btn-link-light {
+  @apply inline-flex items-center font-semibold text-white underline-offset-4 transition hover:underline;
+}
+
+/* Chevron transition: white section flows into navy below */
+.section-chevron-bottom {
+  position: relative;
+  padding-bottom: 7rem;
+}
+
+.section-chevron-bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 5.5rem;
+  background: var(--brand-navy);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+/* Chevron transition: white section receives navy from above */
+.section-chevron-top {
+  position: relative;
+  padding-top: 7rem;
+}
+
+.section-chevron-top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5.5rem;
+  background: var(--brand-navy);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.feature-number {
+  @apply text-4xl font-light leading-none text-white sm:text-5xl;
+}
+
+.feature-line {
+  @apply mt-2 h-px w-12 bg-white/70;
+}
+
+.feature-cta {
+  @apply mt-3 inline-flex items-center gap-1 text-sm font-semibold text-white transition hover:text-white/80;
+}
+
+.step-icon-circle {
+  @apply relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand-muted;
+}
+
+.step-badge {
+  @apply absolute -right-1 top-0 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-semibold text-white shadow;
 }
