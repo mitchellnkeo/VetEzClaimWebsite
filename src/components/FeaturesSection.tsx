@@ -59,27 +59,29 @@ function PhoneMockup({ activeScreen }: { activeScreen: ScreenKey }) {
   );
 
   return (
-    <div className="demo-phone-frame">
-      {(Object.entries(screens) as [ScreenKey, string][]).map(([key, src]) => (
-        <motion.div
-          key={key}
-          className="absolute inset-0"
-          animate={{ opacity: activeScreen === key ? 1 : 0 }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
-          aria-hidden={activeScreen !== key}
-        >
-          <Image
-            src={src}
-            alt={
-              activeScreen === key ? "VetEZ Claim app screenshot" : ""
-            }
-            fill
-            sizes="(max-width: 640px) 240px, (max-width: 1024px) 260px, 280px"
-            className="object-contain object-center"
-            priority={key === "center"}
-          />
-        </motion.div>
-      ))}
+    <div className="demo-phone-mockup">
+      <div className="demo-phone-screen" aria-live="polite">
+        {(Object.entries(screens) as [ScreenKey, string][]).map(([key, src]) => (
+          <motion.div
+            key={key}
+            className="absolute inset-0"
+            animate={{ opacity: activeScreen === key ? 1 : 0 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            aria-hidden={activeScreen !== key}
+          >
+            <Image
+              src={src}
+              alt={
+                activeScreen === key ? "VetEZ Claim app on iPhone" : ""
+              }
+              fill
+              unoptimized
+              className="object-cover object-top"
+              priority={key === "center"}
+            />
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -93,6 +93,9 @@ export const FEATURES_RIGHT = [
 export const PHONE_SCREENSHOT_DEFAULT =
   "/assets/iPhonePictures/CenterPhoto.png";
 
+/** Full-device simulator captures (1206×2622). Shown at large scale — no separate bezel layer. */
+export const PHONE_SCREENSHOT_ASPECT = 1206 / 2622;
+
 /** Maps feature number → app screenshot (shown in demo phone on hover). */
 export const FEATURE_PHONE_SCREENSHOTS: Record<string, string> = {
   "01": "/assets/iPhonePictures/01.png",
