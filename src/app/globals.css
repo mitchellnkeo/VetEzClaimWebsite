@@ -37,40 +37,6 @@ body {
   @apply inline-flex items-center font-semibold text-white underline-offset-4 transition hover:underline;
 }
 
-/* Chevron transition: white section flows into navy below */
-.section-chevron-bottom {
-  position: relative;
-  padding-bottom: 7rem;
-}
-
-.section-chevron-bottom::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 5.5rem;
-  background: var(--brand-navy);
-  clip-path: polygon(0 0, 50% 100%, 100% 0);
-}
-
-/* Chevron transition: white section receives navy from above */
-.section-chevron-top {
-  position: relative;
-  padding-top: 7rem;
-}
-
-.section-chevron-top::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 5.5rem;
-  background: var(--brand-navy);
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
-}
-
 .feature-number {
   @apply text-4xl font-light leading-none text-white sm:text-5xl;
 }

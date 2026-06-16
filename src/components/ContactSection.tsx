@@ -7,6 +7,7 @@ import {
   SUPPORT_EMAIL,
   WEB_APP_URL,
 } from "@/lib/site";
+import ScrollReveal from "./ScrollReveal";
 
 export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -57,7 +58,8 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-brand pb-10 pt-4">
       <div className="section-container">
-        <div className="-mt-16 rounded-xl bg-white p-6 shadow-card sm:p-10">
+        <ScrollReveal>
+          <div className="-mt-[3.125rem] rounded-xl bg-white p-6 shadow-card sm:p-10">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <h2 className="text-2xl font-medium text-brand sm:text-3xl">
@@ -132,7 +134,8 @@ export default function ContactSection() {
               ) : null}
             </form>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
 
         <p className="mt-8 text-center text-sm text-white/90">
           © {year} {LEGAL_ENTITY}. All Rights Reserved —{" "}

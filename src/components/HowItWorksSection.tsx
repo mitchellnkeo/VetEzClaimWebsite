@@ -1,4 +1,5 @@
 import { HOW_IT_WORKS } from "@/lib/site";
+import ScrollReveal from "./ScrollReveal";
 
 function DownloadIcon() {
   return (
@@ -44,27 +45,31 @@ const STEP_ICONS = [DownloadIcon, CheckIcon, BullhornIcon];
 
 export default function HowItWorksSection() {
   return (
-    <section id="steps" className="section-chevron-bottom bg-white">
-      <div className="section-container pb-4 pt-16 md:pt-20">
-        <h2 className="section-title text-center">How It Works</h2>
+    <section id="steps" className="bg-white pb-24 pt-16 md:pt-20">
+      <div className="section-container">
+        <ScrollReveal>
+          <h2 className="section-title text-center">How It Works</h2>
+        </ScrollReveal>
 
         <div className="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
           {HOW_IT_WORKS.map((item, index) => {
             const Icon = STEP_ICONS[index];
 
             return (
-              <article key={item.step} className="text-center">
-                <div className="step-icon-circle">
-                  <span className="step-badge">{item.step}</span>
-                  <Icon />
-                </div>
-                <h3 className="mt-6 text-lg font-medium text-brand">
-                  {item.title}
-                </h3>
-                <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-slate-600">
-                  {item.description}
-                </p>
-              </article>
+              <ScrollReveal key={item.step} delay={index * 0.1}>
+                <article className="text-center">
+                  <div className="step-icon-circle">
+                    <span className="step-badge">{item.step}</span>
+                    <Icon />
+                  </div>
+                  <h3 className="mt-6 text-lg font-medium text-brand">
+                    {item.title}
+                  </h3>
+                  <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-slate-600">
+                    {item.description}
+                  </p>
+                </article>
+              </ScrollReveal>
             );
           })}
         </div>
