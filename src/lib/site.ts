@@ -29,8 +29,15 @@ export const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#steps", label: "Steps" },
   { href: "#demo", label: "Demo" },
+  { href: "#donate", label: "Donate" },
   { href: "#contact", label: "Contact" },
 ] as const;
+
+export const DONATE_SUPPORT =
+  "Your support allows us to add new features and assist more veterans.";
+
+export const DONATE_DISCLAIMER =
+  "Donations are voluntary and support our nonprofit mission to assist veterans. All app features are free after you create an account and complete your profile. You will complete your gift on Zeffy's secure donation page (one-time or monthly).";
 
 export const HOW_IT_WORKS = [
   {

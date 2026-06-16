@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function DownloadSection() {
   return (
-    <section id="download" className="bg-white pt-20">
+    <section id="download" className="bg-white pt-20 pb-8 md:pb-12">
       <div className="section-container py-16 text-center md:py-20">
         <ScrollReveal>
           <Image

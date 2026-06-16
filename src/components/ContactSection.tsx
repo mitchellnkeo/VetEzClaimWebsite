@@ -56,10 +56,10 @@ export default function ContactSection() {
   const year = new Date().getFullYear();
 
   return (
-    <section id="contact" className="bg-brand pb-10 pt-4">
+    <section id="contact" className="bg-brand pb-10 pt-12 md:pt-16">
       <div className="section-container">
         <ScrollReveal>
-          <div className="-mt-[3.125rem] rounded-xl bg-white p-6 shadow-card sm:p-10">
+          <div className="rounded-xl bg-white p-6 shadow-card sm:p-10">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <h2 className="text-2xl font-medium text-brand sm:text-3xl">
