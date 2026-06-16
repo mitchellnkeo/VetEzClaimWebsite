@@ -67,48 +67,52 @@ body {
   }
 }
 
-.demo-feature-row {
-  @apply flex flex-col justify-center;
-}
-
-/* 3-row grid: 01/02/03 align with 04/05/06 and center phone */
-.demo-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-  column-gap: 2.5rem;
-  align-items: center;
-}
-
-@media (min-width: 1280px) {
-  .demo-grid {
-    column-gap: 3.5rem;
-  }
-}
-
-.demo-grid-cell {
-  display: flex;
-  align-items: center;
-  min-height: 7.5rem;
-}
-
-.demo-grid-cell-left {
-  grid-column: 1;
-  justify-content: flex-start;
-}
-
-.demo-grid-cell-right {
-  grid-column: 3;
-  justify-content: flex-start;
-}
-
-.demo-grid-phone {
-  grid-column: 2;
-  grid-row: 1 / span 3;
+/* Demo showcase: equal gaps between left features | phone | right features */
+.demo-showcase {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-self: center;
+  gap: 3rem;
+}
+
+@media (min-width: 1280px) {
+  .demo-showcase {
+    gap: 4rem;
+  }
+}
+
+.demo-showcase-side {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.demo-showcase-side-left {
+  align-items: flex-end;
+}
+
+.demo-showcase-side-right {
+  align-items: flex-start;
+}
+
+.demo-showcase-side-inner {
+  width: 16rem;
+  flex-shrink: 0;
+}
+
+.demo-showcase-side-inner .scroll-reveal-slot {
+  width: 100%;
+}
+
+.demo-showcase-phone {
+  flex: 0 0 auto;
+}
+
+.demo-feature-row {
+  @apply flex w-full flex-col justify-center py-4;
+  min-height: 7.5rem;
 }
 
 .step-icon-circle {

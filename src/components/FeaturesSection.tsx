@@ -33,7 +33,7 @@ function FeatureBlock({
     >
       <p className="feature-number">{feature.number}</p>
       <div className="feature-line" />
-      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-white/95">
+      <p className="mt-3 text-sm leading-relaxed text-white/95">
         {feature.title}
       </p>
       <a
@@ -95,42 +95,46 @@ function DemoGrid({
 }) {
   return (
     <div className="hidden lg:block" onMouseLeave={resetScreen}>
-      <div className="demo-grid">
-        {FEATURES_LEFT.map((feature, index) => (
-          <div
-            key={feature.number}
-            className="demo-grid-cell demo-grid-cell-left"
-            style={{ gridRow: index + 1 }}
-          >
-            <ScrollReveal delay={index * 0.08}>
-              <FeatureBlock
-                feature={feature}
-                onHighlight={setActiveScreen}
-              />
-            </ScrollReveal>
+      <div className="demo-showcase">
+        <div className="demo-showcase-side demo-showcase-side-left">
+          <div className="demo-showcase-side-inner">
+            {FEATURES_LEFT.map((feature, index) => (
+              <ScrollReveal
+                key={feature.number}
+                delay={index * 0.08}
+                className="scroll-reveal-slot"
+              >
+                <FeatureBlock
+                  feature={feature}
+                  onHighlight={setActiveScreen}
+                />
+              </ScrollReveal>
+            ))}
           </div>
-        ))}
+        </div>
 
-        <div className="demo-grid-phone">
+        <div className="demo-showcase-phone">
           <ScrollReveal delay={0.1}>
             <PhoneMockup activeScreen={activeScreen} />
           </ScrollReveal>
         </div>
 
-        {FEATURES_RIGHT.map((feature, index) => (
-          <div
-            key={feature.number}
-            className="demo-grid-cell demo-grid-cell-right"
-            style={{ gridRow: index + 1 }}
-          >
-            <ScrollReveal delay={index * 0.08}>
-              <FeatureBlock
-                feature={feature}
-                onHighlight={setActiveScreen}
-              />
-            </ScrollReveal>
+        <div className="demo-showcase-side demo-showcase-side-right">
+          <div className="demo-showcase-side-inner">
+            {FEATURES_RIGHT.map((feature, index) => (
+              <ScrollReveal
+                key={feature.number}
+                delay={index * 0.08}
+                className="scroll-reveal-slot"
+              >
+                <FeatureBlock
+                  feature={feature}
+                  onHighlight={setActiveScreen}
+                />
+              </ScrollReveal>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
