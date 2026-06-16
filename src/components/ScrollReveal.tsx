@@ -10,7 +10,7 @@ type ScrollRevealProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  variant?: "fade-up" | "zoom-in";
+  variant?: "fade-up" | "fade-in" | "zoom-in";
 } & Pick<HTMLMotionProps<"div">, "id">;
 
 export default function ScrollReveal({
@@ -33,11 +33,15 @@ export default function ScrollReveal({
   const initial =
     variant === "zoom-in"
       ? { opacity: 0, scale: 0.85 }
-      : { opacity: 0, y: 20 };
+      : variant === "fade-in"
+        ? { opacity: 0 }
+        : { opacity: 0, y: 20 };
   const visible =
     variant === "zoom-in"
       ? { opacity: 1, scale: 1 }
-      : { opacity: 1, y: 0 };
+      : variant === "fade-in"
+        ? { opacity: 1 }
+        : { opacity: 1, y: 0 };
 
   return (
     <motion.div

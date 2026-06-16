@@ -9,9 +9,9 @@ export default function DonateSection() {
   return (
     <section id="donate" className="bg-brand-muted py-16 md:py-20">
       <div className="section-container">
-        <ScrollReveal>
-          <div className="rounded-xl bg-white p-6 shadow-card sm:p-10">
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+        <div className="rounded-xl bg-white p-6 shadow-card sm:p-10">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+            <ScrollReveal variant="fade-in">
               <div>
                 <h2 className="text-2xl font-medium text-brand sm:text-3xl">
                   Donate
@@ -30,8 +30,10 @@ export default function DonateSection() {
                   </p>
                 </div>
               </div>
+            </ScrollReveal>
 
-              <div className="flex flex-col justify-center">
+            <ScrollReveal variant="fade-in" delay={0.1}>
+              <div className="flex h-full flex-col justify-center">
                 <h3 className="text-lg font-semibold text-brand sm:text-xl">
                   Support our mission
                 </h3>
@@ -48,8 +50,10 @@ export default function DonateSection() {
                   Donate Now
                 </a>
               </div>
-            </div>
+            </ScrollReveal>
+          </div>
 
+          <ScrollReveal variant="fade-in" delay={0.18}>
             <div className="mt-10 flex flex-col items-center gap-5 border-t border-slate-200 pt-8 sm:flex-row sm:items-center sm:gap-8">
               <img
                 src="/assets/zeffy-donate-qr.png"
@@ -67,12 +71,14 @@ export default function DonateSection() {
                 </p>
               </div>
             </div>
+          </ScrollReveal>
 
+          <ScrollReveal variant="fade-in" delay={0.24}>
             <p className="mt-8 text-xs leading-relaxed text-slate-600 sm:text-sm">
               {DONATE_DISCLAIMER}
             </p>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
