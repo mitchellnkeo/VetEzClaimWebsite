@@ -9,7 +9,8 @@ export default function DonateSection() {
   return (
     <section id="donate" className="bg-brand-muted py-16 md:py-20">
       <div className="section-container">
-        <div className="rounded-xl bg-white p-6 shadow-card sm:p-10">
+        <ScrollReveal variant="fade-in" fadeOutOnLeave>
+          <div className="rounded-xl bg-white p-6 shadow-card sm:p-10">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
             <ScrollReveal variant="fade-in">
               <div>
@@ -78,7 +79,8 @@ export default function DonateSection() {
               {DONATE_DISCLAIMER}
             </p>
           </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

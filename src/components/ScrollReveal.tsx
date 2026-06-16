@@ -11,6 +11,8 @@ type ScrollRevealProps = {
   className?: string;
   delay?: number;
   variant?: "fade-up" | "fade-in" | "zoom-in";
+  /** When true, content fades back out after scrolling past the viewport. */
+  fadeOutOnLeave?: boolean;
 } & Pick<HTMLMotionProps<"div">, "id">;
 
 export default function ScrollReveal({
@@ -18,6 +20,7 @@ export default function ScrollReveal({
   className,
   delay = 0,
   variant = "fade-up",
+  fadeOutOnLeave = false,
   id,
 }: ScrollRevealProps) {
   const prefersReducedMotion = useReducedMotion();
@@ -49,10 +52,10 @@ export default function ScrollReveal({
       className={className}
       initial={initial}
       whileInView={visible}
-      viewport={{ once: true, amount: 0.2, margin: "-40px" }}
+      viewport={{ once: !fadeOutOnLeave, amount: 0.2, margin: "-40px" }}
       transition={{
-        duration: 0.55,
-        delay,
+        duration: fadeOutOnLeave ? 0.45 : 0.55,
+        delay: fadeOutOnLeave ? 0 : delay,
         ease: "easeOut",
       }}
     >
