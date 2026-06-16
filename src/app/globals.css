@@ -49,6 +49,28 @@ body {
   @apply mt-3 inline-flex items-center gap-1 text-sm font-semibold text-white transition hover:text-white/80;
 }
 
+/* Demo section — fixed phone frame prevents layout shift on screenshot swap */
+.demo-phone-frame {
+  @apply relative z-30 mx-auto w-[240px] shrink-0 sm:w-[260px] lg:w-[280px];
+  height: 500px;
+}
+
+@media (min-width: 640px) {
+  .demo-phone-frame {
+    height: 540px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .demo-phone-frame {
+    height: 580px;
+  }
+}
+
+.demo-feature-row {
+  @apply flex min-h-[8.5rem] flex-col justify-center py-3 sm:min-h-[9.5rem] lg:min-h-[10.5rem] lg:py-4;
+}
+
 .step-icon-circle {
   @apply relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand-muted;
 }

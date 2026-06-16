@@ -35,7 +35,7 @@ function PolyfoldShape({
 
   return (
     <motion.div
-      className="pointer-events-none absolute left-0 right-0 z-20 overflow-hidden"
+      className="pointer-events-none absolute left-0 right-0 z-10 overflow-hidden"
       style={{
         [edge]: 0,
         height,

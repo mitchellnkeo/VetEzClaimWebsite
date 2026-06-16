@@ -89,3 +89,16 @@ export const FEATURES_RIGHT = [
     href: WEB_APP_URL,
   },
 ] as const;
+
+export const PHONE_SCREENSHOT_DEFAULT =
+  "/assets/iPhonePictures/CenterPhoto.png";
+
+/** Maps feature number → app screenshot (shown in demo phone on hover). */
+export const FEATURE_PHONE_SCREENSHOTS: Record<string, string> = {
+  "01": "/assets/iPhonePictures/01.png",
+  "02": "/assets/iPhonePictures/02.png",
+  "03": "/assets/iPhonePictures/03.png",
+  "04": "/assets/iPhonePictures/04.png",
+  "05": "/assets/iPhonePictures/05.png",
+  "06": "/assets/iPhonePictures/06.png",
+};
