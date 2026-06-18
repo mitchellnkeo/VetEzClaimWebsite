@@ -8,7 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { APP_STORE_URL } from "@/lib/site";
+import { APP_STORE_URL, HERO_HEADLINE, HERO_NONPROFIT_LINE, HERO_SUBHEADLINE } from "@/lib/site";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -63,19 +63,24 @@ export default function HeroSection() {
             className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
             {...fadeUp(0.15)}
           >
-            The app that serves YOU
+            {HERO_HEADLINE}
           </motion.h1>
           <motion.p
             className="mt-5 max-w-xl text-lg font-medium text-white/90 sm:text-xl"
             {...fadeUp(0.25)}
           >
-            Significantly cut the time it takes to request and process your
-            well-deserved Veteran Benefits
+            {HERO_SUBHEADLINE}
+          </motion.p>
+          <motion.p
+            className="mt-4 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base"
+            {...fadeUp(0.3)}
+          >
+            {HERO_NONPROFIT_LINE}
           </motion.p>
 
           <motion.div
             className="mt-8 flex flex-wrap items-center gap-6"
-            {...fadeUp(0.35)}
+            {...fadeUp(0.38)}
           >
             <a
               href={APP_STORE_URL}

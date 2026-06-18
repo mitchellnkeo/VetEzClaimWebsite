@@ -3,6 +3,14 @@ export const PRODUCT_NAME = "VetEZ Claim";
 export const NONPROFIT_TAGLINE =
   "VetEZ Claim, from VetClaims Alliance, a nonprofit corporation";
 
+export const HERO_HEADLINE = "The FREE app built to serve you";
+
+export const HERO_SUBHEADLINE =
+  "Significantly cut the time it takes to complete and file for your well-deserved Veteran Benefits";
+
+export const HERO_NONPROFIT_LINE =
+  "VetEZ Claim is a product of VetClaims Alliance, a non-profit organization focused on Veteran technology solutions";
+
 export const LEGAL_ENTITY = "VetClaims Alliance, a nonprofit corporation";
 
 export const SUPPORT_EMAIL = "support@vetezclaim.com";
