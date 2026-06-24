@@ -8,7 +8,16 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { APP_STORE_URL, HERO_HEADLINE, HERO_NONPROFIT_LINE, HERO_SUBHEADLINE } from "@/lib/site";
+import {
+  APP_STORE_URL,
+  CTA_DOWNLOAD_APP,
+  CTA_GET_HELP,
+  CTA_USE_WEB_APP,
+  HERO_HEADLINE,
+  HERO_NONPROFIT_LINE,
+  HERO_SUBHEADLINE,
+  WEB_APP_LOGIN_URL,
+} from "@/lib/site";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -79,7 +88,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex flex-wrap items-center gap-6"
+            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4"
             {...fadeUp(0.38)}
           >
             <a
@@ -88,13 +97,21 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download Now
+              {CTA_DOWNLOAD_APP}
               <span aria-hidden className="ml-2 opacity-70">
                 →
               </span>
             </a>
+            <a
+              href={WEB_APP_LOGIN_URL}
+              className="btn-outline-light-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {CTA_USE_WEB_APP}
+            </a>
             <a href="#contact" className="btn-link-light">
-              Get Help
+              {CTA_GET_HELP}
             </a>
           </motion.div>
         </div>

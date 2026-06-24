@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { APP_STORE_URL, NAV_LINKS, PRODUCT_NAME } from "@/lib/site";
+import {
+  CTA_USE_WEB_APP,
+  NAV_LINKS,
+  PRODUCT_NAME,
+  WEB_APP_LOGIN_URL,
+} from "@/lib/site";
 
 export default function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-brand">
       <div className="section-container flex items-center justify-between gap-4 py-4">
-        <Link href="#home" className="flex items-center">
+        <Link href="#home" className="flex shrink-0 items-center">
           <Image
             src="/assets/logo-white.png"
             alt={PRODUCT_NAME}
@@ -17,7 +22,7 @@ export default function SiteHeader() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -30,12 +35,12 @@ export default function SiteHeader() {
         </nav>
 
         <a
-          href={APP_STORE_URL}
-          className="btn-download shrink-0 px-5 py-2 text-xs sm:text-sm"
+          href={WEB_APP_LOGIN_URL}
+          className="btn-header-web"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download
+          {CTA_USE_WEB_APP}
         </a>
       </div>
     </header>

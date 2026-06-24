@@ -22,6 +22,13 @@ export const APP_STORE_URL =
 export const WEB_APP_URL =
   process.env.NEXT_PUBLIC_WEB_APP_URL || "https://app.vetezclaim.com";
 
+export const WEB_APP_LOGIN_URL = `${WEB_APP_URL}/login`;
+
+export const CTA_DOWNLOAD_APP = "Download App";
+/** Pairs with “Download App” — signals no App Store install required */
+export const CTA_USE_WEB_APP = "Use in Browser";
+export const CTA_GET_HELP = "Get Help";
+
 export const ZEFFY_DONATION_FORM_URL =
   process.env.NEXT_PUBLIC_ZEFFY_DONATION_FORM_URL ||
   "https://www.zeffy.com/en-US/donation-form/suppourt-assisting-veterans";
