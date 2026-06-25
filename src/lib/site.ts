@@ -71,7 +71,7 @@ export const HOW_IT_WORKS = [
     step: "3",
     title: "Submit Forms through the App",
     description:
-      "Direct upload capabilities allow you to submit completed forms directly to the VA",
+      "Direct e-fax upload capabilities allow you to submit completed forms directly to the VA",
   },
 ] as const;
 
@@ -96,7 +96,7 @@ export const FEATURES_LEFT = [
 export const FEATURES_RIGHT = [
   {
     number: "04",
-    title: "Directly upload completed forms to VA",
+    title: "Directly upload via e-fax completed forms to VA.",
     href: APP_STORE_URL,
   },
   {
